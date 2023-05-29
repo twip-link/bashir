@@ -22,5 +22,5 @@ func bash(s string) string {
 	if err != nil {
 		return fmt.Sprintf("insufficiently bashed: %s\n%s", s, err.Error())
 	}
-	return strings.Trim(string(out), "\n")
+	return strings.TrimSpace(string(out))
 }
