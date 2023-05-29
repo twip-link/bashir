@@ -20,7 +20,7 @@ func Bash(command ...string) []string {
 func bash(s string) string {
 	out, err := exec.Command("bash", "-c", s).Output()
 	if err != nil {
-		return fmt.Sprintf("insufficiently bashed: %s", s)
+		return fmt.Sprintf("insufficiently bashed: %s\n%s", s, err.Error())
 	}
 	return strings.Trim(string(out), "\n")
 }
