@@ -4,7 +4,6 @@ package bashir
 import (
 	"fmt"
 	"os/exec"
-	"strings"
 )
 
 func Bash(command ...string) []string {
@@ -22,5 +21,5 @@ func bash(s string) string {
 	if err != nil {
 		return fmt.Sprintf("insufficiently bashed: %s\n%s", s, err.Error())
 	}
-	return strings.TrimSpace(string(out))
+	return string(out)
 }
